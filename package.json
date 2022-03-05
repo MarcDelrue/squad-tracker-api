@@ -4,22 +4,29 @@
   "description": "NodeJS - Express api for Squad Tracker",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"test": "echo \"Error: no test specified\" && exit 1",
+	"dev": "nodemon server.js"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MarcDelrue/squad-tracker-api.git"
+	"type": "git",
+	"url": "git+https://github.com/MarcDelrue/squad-tracker-api.git"
   },
   "keywords": [
-    "node",
-    "express",
-    "api",
-    "redis"
+	"node",
+	"express",
+	"api",
+	"redis"
   ],
   "author": "Marc Delrue",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MarcDelrue/squad-tracker-api/issues"
+	"url": "https://github.com/MarcDelrue/squad-tracker-api/issues"
   },
-  "homepage": "https://github.com/MarcDelrue/squad-tracker-api#readme"
+  "homepage": "https://github.com/MarcDelrue/squad-tracker-api#readme",
+  "dependencies": {
+	"express": "^4.17.3"
+  },
+  "devDependencies": {
+	"nodemon": "^2.0.15"
+  }
 }
