@@ -1,0 +1,25 @@
+{
+  "name": "squad-tracker-api",
+  "version": "1.0.0",
+  "description": "NodeJS - Express api for Squad Tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcDelrue/squad-tracker-api.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "api",
+    "redis"
+  ],
+  "author": "Marc Delrue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcDelrue/squad-tracker-api/issues"
+  },
+  "homepage": "https://github.com/MarcDelrue/squad-tracker-api#readme"
+}
