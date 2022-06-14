@@ -10,8 +10,6 @@ import {Squad, SquadSchema} from "./squads/schemas/squad.schema";
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb+srv://MarcDelrue:LBNQ2TYgIiNT3EX9@cluster0.xwvkn.mongodb.net/?retryWrites=true&w=majority'),
-    MongooseModule.forFeature([{name: User.name, schema: UserSchema}]),
-    MongooseModule.forFeature([{name: Squad.name, schema: SquadSchema}]),
     SquadsModule,
     UsersModule,
   ],
