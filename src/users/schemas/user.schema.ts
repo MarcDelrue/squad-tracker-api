@@ -11,6 +11,14 @@ export class User {
   @Prop()
   color: string;
 
+  @Prop()
+  orientation: number;
+
+  @Prop()
+  longitude: string;
+
+  @Prop()
+  latitude: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

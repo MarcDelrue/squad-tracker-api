@@ -4,8 +4,6 @@ import {AppService} from './app.service';
 import {SquadsModule} from './squads/squads.module';
 import {UsersModule} from './users/users.module';
 import {MongooseModule} from '@nestjs/mongoose';
-import {User, UserSchema} from "./users/schemas/user.schema";
-import {Squad, SquadSchema} from "./squads/schemas/squad.schema";
 
 @Module({
   imports: [

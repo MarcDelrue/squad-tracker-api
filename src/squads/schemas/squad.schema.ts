@@ -10,6 +10,9 @@ export class Squad {
   name: string;
 
   @Prop()
+  id: string;
+
+  @Prop()
   maxUser: number;
 
   @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }] })
