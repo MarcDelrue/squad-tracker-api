@@ -19,16 +19,16 @@ export class SquadsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.squadsService.findOne(+id);
+    return this.squadsService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateSquadDto: UpdateSquadDto) {
-    return this.squadsService.update(+id, updateSquadDto);
+    return this.squadsService.update(id, updateSquadDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.squadsService.remove(+id);
+    return this.squadsService.remove(id);
   }
 }
