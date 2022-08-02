@@ -1,6 +1,6 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import mongoose, { Document } from 'mongoose';
-import {User} from "../../users/schemas/user.schema";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import mongoose, { Document } from "mongoose";
+import { User } from "../../users/schemas/user.schema";
 
 export type SquadDocument = Squad & Document;
 
@@ -15,8 +15,8 @@ export class Squad {
   @Prop()
   maxUser: number;
 
-  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }] })
-  users: User[]
+  @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }] })
+  users: User[];
 }
 
 export const SquadSchema = SchemaFactory.createForClass(Squad);

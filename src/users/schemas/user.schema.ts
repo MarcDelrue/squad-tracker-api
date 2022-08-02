@@ -1,5 +1,6 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { now, Document } from "mongoose";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Coordinates } from "./coordinates.schema";
 
 export type UserDocument = User & Document;
 
@@ -11,7 +12,7 @@ export class User {
   @Prop()
   color: string;
 
-  @Prop()
+  @Prop([Number])
   roles: number[];
 
   @Prop()
@@ -20,11 +21,14 @@ export class User {
   @Prop()
   orientation: number;
 
-  @Prop()
-  longitude: string;
+  @Prop({ ref: "Coordinates" })
+  coordinates: Coordinates;
 
-  @Prop()
-  latitude: string;
+  @Prop({ default: now() })
+  createdAt: Date;
+
+  @Prop({ default: now() })
+  updatedAt: Date;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
