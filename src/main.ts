@@ -1,9 +1,7 @@
-import {NestFactory} from '@nestjs/core';
-import {AppModule} from './app.module';
-
+import { NestFactory } from "@nestjs/core";
+import { AppModule } from "./app.module";
 
 async function bootstrap() {
-
   // const app = await NestFactory.createMicroservice<MicroserviceOptions>(
   //     AppModule,
   //     {
@@ -15,6 +13,7 @@ async function bootstrap() {
   // );
   // await app.listen();
   const app = await NestFactory.create(AppModule);
+  app.enableCors();
   await app.listen(3000);
 }
 
