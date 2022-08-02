@@ -12,10 +12,10 @@ export class User {
   color: string;
 
   @Prop()
-  roles: string[];
+  roles: number[];
 
   @Prop()
-  rank: string;
+  rank: number;
 
   @Prop()
   orientation: number;
