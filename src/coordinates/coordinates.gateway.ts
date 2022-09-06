@@ -1,33 +1,40 @@
-import { WebSocketGateway, SubscribeMessage, MessageBody } from '@nestjs/websockets';
-import { CoordinatesService } from './coordinates.service';
-import { CreateCoordinateDto } from './dto/create-coordinate.dto';
-import { UpdateCoordinateDto } from './dto/update-coordinate.dto';
+import {
+  WebSocketGateway,
+  SubscribeMessage,
+  MessageBody,
+} from "@nestjs/websockets";
+import { CoordinatesService } from "./coordinates.service";
+import { CreateCoordinateDto } from "./dto/create-coordinate.dto";
+import { UpdateCoordinateDto } from "./dto/update-coordinate.dto";
 
 @WebSocketGateway()
 export class CoordinatesGateway {
   constructor(private readonly coordinatesService: CoordinatesService) {}
 
-  @SubscribeMessage('createCoordinate')
+  @SubscribeMessage("createCoordinate")
   create(@MessageBody() createCoordinateDto: CreateCoordinateDto) {
     return this.coordinatesService.create(createCoordinateDto);
   }
 
-  @SubscribeMessage('findAllCoordinates')
+  @SubscribeMessage("findAllCoordinates")
   findAll() {
     return this.coordinatesService.findAll();
   }
 
-  @SubscribeMessage('findOneCoordinate')
+  @SubscribeMessage("findOneCoordinate")
   findOne(@MessageBody() id: number) {
     return this.coordinatesService.findOne(id);
   }
 
-  @SubscribeMessage('updateCoordinate')
+  @SubscribeMessage("updateCoordinate")
   update(@MessageBody() updateCoordinateDto: UpdateCoordinateDto) {
-    return this.coordinatesService.update(updateCoordinateDto.id, updateCoordinateDto);
+    return this.coordinatesService.update(
+      updateCoordinateDto.id,
+      updateCoordinateDto
+    );
   }
 
-  @SubscribeMessage('removeCoordinate')
+  @SubscribeMessage("removeCoordinate")
   remove(@MessageBody() id: number) {
     return this.coordinatesService.remove(id);
   }
