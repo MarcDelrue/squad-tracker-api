@@ -1,11 +1,11 @@
-import { Module, CacheModule } from "@nestjs/common";
+import { Module } from "@nestjs/common";
+import { CacheModule } from '@nestjs/cache-manager';
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { SquadsModule } from "./squads/squads.module";
 import { UsersModule } from "./users/users.module";
 import { MongooseModule } from "@nestjs/mongoose";
 import { CoordinatesModule } from "./coordinates/coordinates.module";
-import { CoordinatesGateway } from "./coordinates/coordinates.gateway";
 
 @Module({
   imports: [
@@ -18,6 +18,6 @@ import { CoordinatesGateway } from "./coordinates/coordinates.gateway";
     CoordinatesModule,
   ],
   controllers: [AppController],
-  providers: [AppService, CoordinatesGateway],
+  providers: [AppService],
 })
 export class AppModule {}
