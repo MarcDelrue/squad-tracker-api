@@ -39,7 +39,6 @@ export class SquadsController {
 
     @Patch(':id')
     update(@Param('id') id: string, @Body() updateSquadDto: UpdateSquadDto) {
-        console.log({id, updateSquadDto})
         return this.squadsService.update(id, updateSquadDto);
     }
 

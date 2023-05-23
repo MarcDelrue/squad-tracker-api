@@ -10,8 +10,8 @@ export class UsersService {
     constructor(@InjectModel(User.name) private userModel: Model<UserDocument>) {
     }
 
-    create(createUserDto: CreateUserDto): Promise<User> {
-        const createdUser = new this.userModel(createUserDto);
+    create(createUserDto: CreateUserDto): Promise<UserDocument> {
+        const createdUser = new this.userModel({rank: 0, ...createUserDto});
         return createdUser.save();
     }
 
@@ -22,6 +22,12 @@ export class UsersService {
     async findOne(id: string): Promise<UserDocument> {
         return await this.userModel.findById(id).exec();
     }
+
+    async findByEmail(email: string): Promise<UserDocument> {
+        email = email.toLowerCase()
+        return this.userModel.findOne({email});
+    }
+
 
     async update(
         id: string,
