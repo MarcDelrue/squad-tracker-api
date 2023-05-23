@@ -34,12 +34,6 @@ export class AuthController {
         return this.authService.login(req.user);
     }
 
-    @Get('/logout')
-    logout(@Request() req): any {
-        req.session.destroy();
-        return {msg: 'The user session has ended'}
-    }
-
     @UseGuards(JwtAuthGuard)
     @Get('profile')
     getProfile(@Request() req) {

@@ -12,10 +12,11 @@ export class AuthService {
 
     async signIn(email: string, pass: string): Promise<any> {
         const user = await this.usersService.findByEmail(email);
-        const passwordValid = await bcrypt.compare(pass, user.password)
         if (!user) {
             throw new NotAcceptableException('could not find the user');
         }
+        const passwordValid = await bcrypt.compare(pass, user.password)
+
         if (user && passwordValid) {
             return user;
         }
